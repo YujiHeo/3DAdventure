@@ -6,6 +6,11 @@ public class Player : MonoBehaviour
     public PlayerController controller;
     public PlayerCondition condition;
 
+    public Transform dropPosition;
+
+    public ItemData itemData;
+    public event Action addItem;
+
     private void Awake()
     {
         CharacterManager.Instance.Player = this;

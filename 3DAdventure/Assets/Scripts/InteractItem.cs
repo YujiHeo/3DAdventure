@@ -10,7 +10,7 @@ public class InteractItem : MonoBehaviour
 {
 
     public Image interactIcon;
-    public Image interactPage;
+    public CanvasGroup interactPage;
     public GameObject curInteractGameObject;
 
     public bool IsOpen = false;
@@ -21,7 +21,13 @@ public class InteractItem : MonoBehaviour
     public void InteractInvestigateItem()
     {
         interactIcon.gameObject.SetActive(true);
+        ToggleCursor();
+    }
 
+    void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
     }
 
 
@@ -51,28 +57,20 @@ public class InteractItem : MonoBehaviour
 
         interactPage.gameObject.SetActive(true);
 
-        //curInteractGameObject = hit.collider.gameObject;
+        float i = 1f;
+        interactPage.alpha = 1f;
 
-        Color originalColor = interactPage.color; //originalColor변수에 interactPage 색상값을 저장.
-        Color tempColor = originalColor; //tempColor에 originalColor를 저장.
-
-        tempColor.a = 1f;
         yield return new WaitForSecondsRealtime(wait);
 
-        tempColor.a = 0.8f;
-        interactPage.color = tempColor;
-        yield return null;
-        tempColor.a = 0.6f;
-        interactPage.color = tempColor;
-        yield return null;
-        tempColor.a = 0.3f;
-        interactPage.color = tempColor;
-        yield return null;
+        for (i = 1f; i >= 0f; i -= 0.1f)
+        {
+            interactPage.alpha = i;
 
-        //반복문 써보기
+            yield return null;
+        }
 
         interactPage.gameObject.SetActive(false);
-        interactPage.color = originalColor; //원래 색상값을 interactPage에 재할당.
+        interactPage.alpha = 1f;
 
         IsOpen = false;
 

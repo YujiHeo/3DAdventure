@@ -18,9 +18,11 @@ public class ItemObject : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
+        /*
         //Player 스크립트 먼저 수정
-        //CharacterManager.Instance.Player.itemData = data;
-        //CharacterManager.Instance.Player.addItem?.Invoke();
+        CharacterManager.Instance.Player.itemData = data;
+        CharacterManager.Instance.Player.addItem?.Invoke();
         Destroy(gameObject);
+        */
     }
 }

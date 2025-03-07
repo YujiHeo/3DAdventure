@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rigidbody;
 
+    public Action inventory;
+
     public InteractItem interactItem;
 
     private void Awake()
