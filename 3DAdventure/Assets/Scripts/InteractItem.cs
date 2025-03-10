@@ -21,14 +21,10 @@ public class InteractItem : MonoBehaviour
     public void InteractInvestigateItem()
     {
         interactIcon.gameObject.SetActive(true);
-        ToggleCursor();
+
     }
 
-    void ToggleCursor()
-    {
-        bool toggle = Cursor.lockState == CursorLockMode.Locked;
-        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
-    }
+
 
 
     public void OnInteractItemInput(InputAction.CallbackContext context)

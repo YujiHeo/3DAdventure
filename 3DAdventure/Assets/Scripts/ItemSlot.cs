@@ -52,6 +52,11 @@ public class ItemSlot : MonoBehaviour
         quatityText.text = string.Empty;
     }
 
+    void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+    }
 
     public void OnPopUp(InputAction.CallbackContext context)
     {
@@ -59,6 +64,7 @@ public class ItemSlot : MonoBehaviour
 
         if (playerController != null)
         {
+            ToggleCursor();
             itemSlot.SetActive(!itemSlot.activeSelf);
             Time.timeScale = 0;
             playerController.canLook = false;
