@@ -2193,7 +2193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlot: {fileID: 794672923}
-  itemData: {fileID: 0}
+  item: {fileID: 0}
   inventory: {fileID: 0}
   button: {fileID: 0}
   icon: {fileID: 0}
@@ -5534,7 +5534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ef9e081f4af7c4bac076e878a6e5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiCondition: {fileID: 0}
+  uiCondition: {fileID: 979018458}
 --- !u!114 &2103654429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5547,6 +5547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e532588307436489d147a45f725979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uIInventory: {fileID: 0}
 --- !u!114 &2103654430
 MonoBehaviour:
   m_ObjectHideFlags: 0
